@@ -2,25 +2,26 @@
 <html>
   <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   </head>
   <body ng-app="ww">
     <main ng-controller="RobotController as robotVm">
       <div class="container text-center">
         <h1>Robot Controller</h1>
-        <div class="row">
-          <h2>Forward</h2>
-        </div>
-        <div class="row">
-          <h2>Left</h2>
-          <h2>Snap</h2>
-          <h2>Right</h2>
-        </div>
-        <div class="row">
-          <h2>Backward</h2>
-        </div>
         <div class="row video">
           <img src="http://10.1.10.24:9090/stream/video.mjpeg" type="video/mjpeg">
+        </div>
+        <div class="row">
+          <h2 class="forward button" ng-click="robotVm.forward()">Forward</h2>
+        </div>
+        <div class="row midBtns">
+          <h2 class="left button col-md-1" ng-click="robotVm.left()">Left</h2>
+          <h2 class="snap button col-md-1" ng-click="robotVm.snap()">Snap</h2>
+          <h2 class="right button col-md-1" ng-click="robotVm.right()">Right</h2>
+        </div>
+        <div class="row">
+          <h2 class="backward button" ng-click="robotVm.backward">Backward</h2>
         </div>
       </div>
     </main>

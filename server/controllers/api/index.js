@@ -13,6 +13,8 @@ apiRouter.post("/right", robot.right);
 
 apiRouter.post("/picture", robot.picture);
 
-apiRouter.post('/stream', robot.stream);
+apiRouter.get("/images", (req, res) => {
+  res.sendFile("images/dog_picture.jpg");
+});
 
 module.exports = apiRouter;

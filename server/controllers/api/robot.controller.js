@@ -1,16 +1,15 @@
-const execFile = require('child_process').execFile;
+const exec = require('child_process').exec;
 
 module.exports = {
   forward,
   backward,
   left,
   right,
-  picture,
-  stream
+  picture
 };
 
 function forward(req, res) {
-  execFile('python', ['../goforward.py'], (err, stdout, stderr) => {
+  exec('sudo python ../goforward.py', (err, stdout, stderr) => {
     if (err) console.error(err);
     console.log('node version', stdout);
     res.sendStatus(200)
@@ -18,7 +17,7 @@ function forward(req, res) {
 }
 
 function backward(req, res) {
-  execFile('node', ['--version'], (err, stdout, stderr) => {
+  exec('sudo python ../gobackward.py', (err, stdout, stderr) => {
     if (err) console.error(err);
     console.log('node version', stdout);
     res.sendStatus(200)
@@ -26,7 +25,7 @@ function backward(req, res) {
 }
 
 function left(req, res) {
-  execFile('node', ['--version'], (err, stdout, stderr) => {
+  exec('sudo python ../turnleft.py', (err, stdout, stderr) => {
     if (err) console.error(err);
     console.log('node version', stdout);
     res.sendStatus(200)
@@ -34,7 +33,7 @@ function left(req, res) {
 }
 
 function right(req, res) {
-  execFile('node', ['--version'], (err, stdout, stderr) => {
+  exec('sudo python ../turnright.py', (err, stdout, stderr) => {
     if (err) console.error(err);
     console.log('node version', stdout);
     res.sendStatus(200)
@@ -42,15 +41,7 @@ function right(req, res) {
 }
 
 function picture(req, res) {
-  execFile('node', ['--version'], (err, stdout, stderr) => {
-    if (err) console.error(err);
-    console.log('node version', stdout);
-    res.sendStatus(200)
-  })
-}
-
-function stream(req, res) {
-  execFile('node', ['--version'], (err, stdout, stderr) => {
+  exec('sudo python ../takepicture.py', (err, stdout, stderr) => {
     if (err) console.error(err);
     console.log('node version', stdout);
     res.sendStatus(200)

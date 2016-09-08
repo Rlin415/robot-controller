@@ -11,7 +11,6 @@
     robotVm.left = left;
     robotVm.right = right;
     robotVm.picture = picture;
-    robotVm.stream = stream;
 
     function forward() {
       robotService.forward();
@@ -33,9 +32,6 @@
       robotService.picture();
     }
 
-    function stream() {
-      robotService.stream();
-    }
   }
 
 })();

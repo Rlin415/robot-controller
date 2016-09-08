@@ -1,0 +1,22 @@
+.snap {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.button {
+  border-style: solid;
+  width: 150px;
+  border-radius: 50px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.forward, .backward {
+  margin: auto;
+}
+
+.midBtns {
+  padding-left: 310px;
+}

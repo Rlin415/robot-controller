@@ -10,8 +10,7 @@
       backward,
       left,
       right,
-      picture,
-      stream
+      picture
     };
 
     function forward() {
@@ -32,10 +31,6 @@
 
     function picture() {
       return $http.post('api/picture');
-    }
-
-    function stream() {
-      return $http.post('api/stream');
     }
 
   }
