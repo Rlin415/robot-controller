@@ -1,5 +1,7 @@
 const express = require('express');
 const robot = require('./robot.controller');
+const fs = require('fs');
+const path = require('path');
 
 const apiRouter = express.Router();
 
@@ -14,7 +16,7 @@ apiRouter.post("/right", robot.right);
 apiRouter.post("/picture", robot.picture);
 
 apiRouter.get("/images", (req, res) => {
-  res.sendFile("images/dog_picture.jpg");
+  fs.createReadStream(path.join(__dirname, "images/cam.jpg")).pipe(res);
 });
 
 module.exports = apiRouter;
