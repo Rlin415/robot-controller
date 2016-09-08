@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  </head>
+  <body ng-app="ww">
+    <main ng-controller="RobotController as robotVm">
+      <div class="container text-center">
+        <h1>Robot Controller</h1>
+        <div class="row">
+          <h2>Forward</h2>
+        </div>
+        <div class="row">
+          <h2>Left</h2>
+          <h2>Snap</h2>
+          <h2>Right</h2>
+        </div>
+        <div class="row">
+          <h2>Backward</h2>
+        </div>
+        <div class="row video">
+          <img src="http://10.1.10.24:9090/stream/video.mjpeg" type="video/mjpeg">
+        </div>
+      </div>
+    </main>
+
+  <script src="js/robot/robot.module.js"></script>
+  <script src="js/robot/robot.controller.js"></script>
+  <script src="js/robot/robot.factory.js"></script>
+  <script src="js/ww.module.js"></script>
+  </body>
+</html>
