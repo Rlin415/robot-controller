@@ -6,9 +6,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
   </head>
   <body ng-app="ww">
-    <div class="loader" ng-show="robotVm.clicked">Loading...</div>
-    <main ng-hide="robotVm.clicked" ng-controller="RobotController as robotVm">
-      <div class="container text-center">
+    <main ng-controller="RobotController as robotVm">
+      <div class="loading" ng-show="robotVm.clicked">
+        <h1 class="loading-comment">Sending command to Dash</h1>
+        <div class="loader">Loading...</div>
+      </div>
+      <div class="container text-center" ng-hide="robotVm.clicked">
         <h1 class="title">Robot Controller</h1>
         <h2 class="button snap" ng-click="robotVm.picture()">Snap</h2>
         <div class="row video">
