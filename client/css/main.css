@@ -2,10 +2,9 @@ html, body {
   background-color: #cae4eb;
 }
 
-body {
-  margin-top: 100px;
+.logo {
+  margin: 20px 20px 0 20px;
 }
-
 
 .loading {
   text-align: center;
