@@ -41,6 +41,7 @@ function right(req, res) {
 }
 
 function picture(req, res) {
+  console.log('hit picture api');
   exec('sudo pkill uv4l', (err, stdout, stderr) => {
     if (err) console.error(err);
     exec('sudo raspistill -o -vf ~/workingdirakash/cam.jpg', (err, stdout, stderr) => {

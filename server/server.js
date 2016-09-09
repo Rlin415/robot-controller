@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const controllers = require('./controllers');
 const twilio = require("twilio");
-const config = require("../config.js");
 
 const app = express();
 

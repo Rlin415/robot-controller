@@ -38,9 +38,11 @@
     }
 
     function picture() {
+      console.log('snapped picture');
       robotVm.clicked = true;
       robotService.picture()
-        .then(() => robotVm.clicked = false);
+        .then(() => robotVm.clicked = false)
+        .catch((err) => console.error(err));
     }
 
   }
