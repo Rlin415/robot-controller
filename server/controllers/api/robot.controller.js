@@ -39,9 +39,9 @@ function right(req, res) {
   console.log('hit right api');
   exec('sudo python ../turnright.py', (err, stdout, stderr) => {
     if (err) console.error(err);
-    console.log('returned: ', stdout);
-    res.sendStatus(200);
-  })
+  });
+  console.log('send right command to robot');
+  res.sendStatus(200);
 }
 
 function picture(req, res) {
