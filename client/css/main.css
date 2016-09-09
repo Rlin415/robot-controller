@@ -6,6 +6,10 @@ body {
   margin-top: 100px;
 }
 
+.loading {
+  text-align: center;
+}
+
 .title {
   color: #00ACD7;
 }

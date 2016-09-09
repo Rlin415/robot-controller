@@ -44,7 +44,7 @@ function picture(req, res) {
   console.log('hit picture api');
   exec('sudo python ../dropboxp.py', (err, stdout, stderr) => {
     if (err) console.error(err);
-    console.log('success', stdout);
+    console.log('returned: ', stdout);
     res.sendStatus(200);
   });
 }

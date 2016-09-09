@@ -56,6 +56,7 @@
         .then(() => {
           robotVm.clicked = false;
           console.log('picture success');
+          location.reload();
         })
         .catch((err) => console.error(err));
     }
