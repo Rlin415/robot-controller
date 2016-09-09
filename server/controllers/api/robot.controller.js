@@ -9,6 +9,7 @@ module.exports = {
 };
 
 function forward(req, res) {
+  console.log('hit forward api');
   exec('sudo python ../goforward.py', (err, stdout, stderr) => {
     if (err) console.error(err);
     console.log('returned: ', stdout);
@@ -17,6 +18,7 @@ function forward(req, res) {
 }
 
 function backward(req, res) {
+  console.log('hit backward api');
   exec('sudo python ../gobackward.py', (err, stdout, stderr) => {
     if (err) console.error(err);
     console.log('returned: ', stdout);
@@ -25,6 +27,7 @@ function backward(req, res) {
 }
 
 function left(req, res) {
+  console.log('hit left api');
   exec('sudo python ../turnleft.py', (err, stdout, stderr) => {
     if (err) console.error(err);
     console.log('returned: ', stdout);
@@ -33,6 +36,7 @@ function left(req, res) {
 }
 
 function right(req, res) {
+  console.log('hit right api');
   exec('sudo python ../turnright.py', (err, stdout, stderr) => {
     if (err) console.error(err);
     console.log('returned: ', stdout);

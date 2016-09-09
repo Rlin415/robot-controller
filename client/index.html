@@ -8,7 +8,7 @@
   <body ng-app="ww">
     <main ng-controller="RobotController as robotVm">
       <div class="loading" ng-show="robotVm.clicked">
-        <h1 class="loading-comment">Sending command to Dash</h1>
+        <h1 class="loading-comment">Sending Command To Dash</h1>
         <div class="loader">Loading...</div>
       </div>
       <div class="container text-center" ng-hide="robotVm.clicked">
@@ -25,7 +25,7 @@
           <h2 class="right button col-md-1" ng-click="robotVm.right()">Right</h2>
         </div>
         <div class="row">
-          <h2 class="backward button" ng-click="robotVm.backward">Backward</h2>
+          <h2 class="backward button" ng-click="robotVm.backward()">Backward</h2>
         </div>
       </div>
     </main>

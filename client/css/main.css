@@ -10,7 +10,7 @@ body {
   text-align: center;
 }
 
-.title {
+.title, .loading-comment {
   color: #00ACD7;
 }
 

@@ -14,37 +14,33 @@
     robotVm.clicked = false;
 
     function forward() {
-      robotVm.clicked = true;
+      console.log('moving forward');
       robotService.forward()
         .then(() => {
-          robotVm.clicked = false
           console.log('forward success');
         });
     }
 
     function backward() {
-      robotVm.clicked = true;
+      console.log('moving backward');
       robotService.backward()
         .then(() => {
-          robotVm.clicked = false
           console.log('backward success');
         });
     }
 
     function left() {
-      robotVm.clicked = true;
+      console.log('moving left');
       robotService.left()
         .then(() => {
-          robotVm.clicked = false
           console.log('left click success');
         });
     }
 
     function right() {
-      robotVm.clicked = true;
+      console.log('moving right');
       robotService.right()
         .then(() => {
-          robotVm.clicked = false
           console.log('right click success');
         });
     }
