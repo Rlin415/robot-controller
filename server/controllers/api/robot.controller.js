@@ -11,39 +11,48 @@ module.exports = {
 function forward(req, res) {
   exec('sudo python ../goforward.py', (err, stdout, stderr) => {
     if (err) console.error(err);
-    console.log('node version', stdout);
+    console.log('returned: ', stdout);
+    res.sendStatus(200);
   })
-  res.end("success");
 }
 
 function backward(req, res) {
   exec('sudo python ../gobackward.py', (err, stdout, stderr) => {
     if (err) console.error(err);
-    console.log('node version', stdout);
+    console.log('returned: ', stdout);
+    res.sendStatus(200);
   })
-  res.end("success");
 }
 
 function left(req, res) {
   exec('sudo python ../turnleft.py', (err, stdout, stderr) => {
     if (err) console.error(err);
-    console.log('node version', stdout);
+    console.log('returned: ', stdout);
+    res.sendStatus(200);
   })
-  res.end("success");
 }
 
 function right(req, res) {
   exec('sudo python ../turnright.py', (err, stdout, stderr) => {
     if (err) console.error(err);
-    console.log('node version', stdout);
+    console.log('returned: ', stdout);
+    res.sendStatus(200);
   })
-  res.end("success");
 }
 
 function picture(req, res) {
-  exec('sudo python ../picturetext.py', (err, stdout, stderr) => {
+  exec('sudo pkill uv4l', (err, stdout, stderr) => {
     if (err) console.error(err);
-    console.log('node version', stdout);
-  })
-  res.end("success");
+    exec('sudo raspistill -o -vf cam.jpg', (err, stdout, stderr) => {
+      if (err) console.error(err);
+      exec('sudo uv4l -nopreview --auto-video_nr --driver raspicam --encoding mjpeg --width 640 --height 480 --framerate 20 --server-option ' + '--port=9090' + ' --server-option ' + '--max-queued-connections=30' + ' --server-option ' + '--max-streams=25' + ' --server-option ' + '--max-threads=29' + ' --vf', (err, stdout, stdinn) => {
+        if (err) console.error(err);
+        exec('sudo python ../picturetext.py', (err, stdout, stderr) => {
+          if (err) console.error(err);
+          console.log('returned: ', stdout);
+          res.sendStatus(200);
+        })
+      });
+    });
+  });
 }

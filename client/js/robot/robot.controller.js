@@ -11,25 +11,36 @@
     robotVm.left = left;
     robotVm.right = right;
     robotVm.picture = picture;
+    robotVm.clicked = false;
 
     function forward() {
-      robotService.forward();
+      robotVm.clicked = true;
+      robotService.forward()
+        .then(() => robotVm.clicked = false);
     }
 
     function backward() {
-      robotService.backward();
+      robotVm.clicked = true;
+      robotService.backward()
+        .then(() => robotVm.clicked = false);
     }
 
     function left() {
-      robotService.left();
+      robotVm.clicked = true;
+      robotService.left()
+        .then(() => robotVm.clicked = false);
     }
 
     function right() {
-      robotService.right();
+      robotVm.clicked = true;
+      robotService.right()
+        .then(() => robotVm.clicked = false);
     }
 
     function picture() {
-      robotService.picture();
+      robotVm.clicked = true;
+      robotService.picture()
+        .then(() => robotVm.clicked = false);
     }
 
   }

@@ -15,8 +15,8 @@ apiRouter.post("/right", robot.right);
 
 apiRouter.post("/picture", robot.picture);
 
-apiRouter.get("/images", (req, res) => {
-  fs.createReadStream(path.join(__dirname, "images/cam.jpg")).pipe(res);
-});
+// apiRouter.get("/images", (req, res) => {
+//   fs.createReadStream(path.join(__dirname, "images/cam.jpg")).pipe(res);
+// });
 
 module.exports = apiRouter;
